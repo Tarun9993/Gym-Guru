@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-// import logo from "./Logo.png"
 import logo from "../assets/Logo.png"
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
@@ -43,17 +42,17 @@ function Navbar() {
   tl.pause()
   return (
   <div>
-    <nav className='text-white flex justify-between px-5 py-1 items-center'>
+    <nav className='text-white flex justify-between px-5 py-1 items-center overflow-auto'>
     <div>
-       <img src={logo} alt="logo" className='h-[5rem] '/>
+       <img src={logo} alt="logo" className='h-[5rem] cursor-pointer z-50'/>
     </div>
     <ul className='hidden md:flex gap-10 font-sans text-[1.20rem] font-medium text-gray-300'>
-      <li><a href='#'>Home</a></li>
-      <li><a href='#'>About</a></li>
-      <li><a href='#'>Services</a></li>
-      <li><a href='#'>Plans</a></li>
-      <li><a href='#'>Contact</a></li>
-    </ul>
+  <li className="relative group cursor-pointer z-50">Home</li>
+  <li className="relative group cursor-pointer z-50">About</li>
+  <li className="relative group cursor-pointer">Services</li>
+  <li className="relative group cursor-pointer">Plans</li>
+  <li className="relative group cursor-pointer">Contact</li>
+</ul>
     <div>
     <button className="hidden md:inline-flex relative  h-12 overflow-hidden rounded-full p-[1px]">
         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#16FCFA_0%,#16FCFA_50%,#16FCFA_100%)]" />
@@ -65,13 +64,13 @@ function Navbar() {
       <IoMenu size={36} className='md:hidden h-10 w-9' onClick={handleMenu}/>
     </nav>
    <div>
-   <nav ref={backRef} className='absolute top-0 left-0 bg-black w-1/2 h-full'>
+   <nav ref={backRef} className='absolute top-0 left-0 bg-black w-1/2 h-full z-30'>
       <ul ref={items}  className='flex flex-col gap-10 ml-7 mt-20 mb-7 font-sans md:text-[1.75rem] font-medium text-gray-300'>
-        <li><a href='#'>Home</a></li>
-        <li><a href='#'>About</a></li>
-        <li><a href='#'>Services</a></li>
-        <li><a href='#'>Plans</a></li>
-        <li><a href='#'>Contact</a></li>
+        <li>Home</li>
+      <li>About</li>
+      <li>Services</li>
+      <li>Plans</li>
+      <li>Contact</li>
       </ul>
     
     <button ref={buttonRef} className="inline-flex relative  h-12 overflow-hidden rounded-full p-[1px] ml-7">
@@ -80,7 +79,7 @@ function Navbar() {
          Become A Member
         </span>
       </button>
-      <RxCross2 size={28} className='absolute top-0 right-0 m-10 text-white'
+      <RxCross2 size={28} className='absolute top-0 right-0 m-10 text-white cursor-pointer'
       onClick={handleCross}/>
     </nav>
    </div>

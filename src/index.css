@@ -2,3 +2,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.group::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #34a8a6;
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateY(-50%, -50%);
+  pointer-events: none; /* Prevents the pseudo-element from blocking the cursor */
+}
+
+.group:hover::after {
+  width: 100%;
+  left: 0;
+}
+ul li {
+  cursor: pointer;
+}
