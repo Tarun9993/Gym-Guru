@@ -45,7 +45,7 @@ function Navbar() {
   <div>
     <nav className='text-white flex justify-between px-10 py-1 items-center'>
     <div>
-       <img src={logo} alt="logo" className='h-[5rem]'/>
+       <img src={logo} alt="logo" className='h-[5rem] '/>
     </div>
     <ul className='hidden md:flex gap-10 font-sans text-[1.20rem] font-medium text-gray-300'>
       <li><a href='#'>Home</a></li>
