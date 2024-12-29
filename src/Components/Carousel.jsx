@@ -35,7 +35,7 @@ function Carousel() {
     return (
         <div>
             <FaAngleLeft size={32} className='text-[#8dc9c8] absolute top-64 sm:top-56 md:top-96 left-4 cursor-pointer z-40' onClick={handleLeft}/>
-                        <div className='py-16 px-16'>
+                        <div className='py-16 md:px-16 p-12'>
                             <div className="relative w-full h-[38vh] sm:h-[30vh] md:h-[30rem] ">
                                 <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent">
                                     <div ref={gsapSlogan}>
