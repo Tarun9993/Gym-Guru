@@ -35,13 +35,13 @@ function Carousel() {
     return (
         <div>
             <FaAngleLeft size={32} className='text-[#8dc9c8] absolute top-64 sm:top-56 md:top-96 left-2 cursor-pointer z-40 opacity-50' onClick={handleLeft}/>
-                        <div className='py-16 md:px-16 p-12'>
+                        <div className='pt-16 py-16 md:px-12 '>
                             <div className="relative w-full h-[38vh] sm:h-[30vh] md:h-[30rem] ">
                                 <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent">
                                     <div ref={gsapSlogan}>
-                                    <h1   className='text-2xl pt-10 ml-1 tracking-tight font-sans font-bold text-[#16FCFA] md:text-6xl md:mt-16 md:tracking-wide'>{swiperData[index].slogan}</h1>
-                                    <h1  className='text-white text-4xl pt-3 ml-1 uppercase -tracking-tighter  font-sans font-bold md:text-7xl md:mt-5'>{swiperData[index].title}</h1>
-                                    <h4  className='pt-4 tracking-tighter max-w-60 text-neutral-400 md:text-2xl md:max-w-full'>{swiperData[index].desc}</h4>
+                                    <h1   className='text-2xl pt-10 ml-10 tracking-tight font-sans font-bold text-[#16FCFA] md:text-5xl md:mt-16 md:tracking-wide'>{swiperData[index].slogan}</h1>
+                                    <h1  className='text-white text-4xl pt-3 ml-10 uppercase -tracking-tighter  font-sans font-bold md:text-6xl md:mt-5'>{swiperData[index].title}</h1>
+                                    <h4  className='pt-4 tracking-tighter max-w-60 ml-10 text-neutral-400 md:text-2xl md:max-w-full'>{swiperData[index].desc}</h4>
                                     </div>
                                    
                                 </div>
@@ -50,7 +50,7 @@ function Carousel() {
                             </div>
                         </div>
 
-            <FaAngleRight size={32} className='text-[#8dc9c8] absolute right-3 top-64 sm:top-56 md:top-96 cursor-pointer opacity-50' onClick={handleRight} />
+            <FaAngleRight size={32} className='text-[#8dc9c8] absolute right-2 top-64 sm:top-56 md:top-96 cursor-pointer opacity-50' onClick={handleRight} />
         </div>
     )
 }
