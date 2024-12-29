@@ -43,7 +43,7 @@ function Navbar() {
   tl.pause()
   return (
   <div>
-    <nav className='text-white flex justify-between px-10 py-1 items-center'>
+    <nav className='text-white flex justify-between px-5 py-1 items-center'>
     <div>
        <img src={logo} alt="logo" className='h-[5rem] '/>
     </div>
@@ -66,7 +66,7 @@ function Navbar() {
     </nav>
    <div>
    <nav ref={backRef} className='absolute top-0 left-0 bg-black w-1/2 h-full'>
-      <ul ref={items}  className='flex flex-col gap-10 ml-7 mt-20 mb-7 font-sans text-[1.75rem] font-medium text-gray-300'>
+      <ul ref={items}  className='flex flex-col gap-10 ml-7 mt-20 mb-7 font-sans md:text-[1.75rem] font-medium text-gray-300'>
         <li><a href='#'>Home</a></li>
         <li><a href='#'>About</a></li>
         <li><a href='#'>Services</a></li>
