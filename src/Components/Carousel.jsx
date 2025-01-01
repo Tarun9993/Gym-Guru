@@ -19,7 +19,7 @@ function Carousel() {
     const gsapSlogan = useRef(null)
     useEffect(() => {
         gsap.fromTo(
-            gsapSlogan.current,
+            gsapSlogan.current.children,
             {
                 x: -80,
                 opacity: 0,
@@ -29,6 +29,7 @@ function Carousel() {
                 opacity: 1, 
                 duration: 1,
                 delay: 0.6,
+                stagger:0.2
             }
         );
     }, [index]);
@@ -50,7 +51,7 @@ function Carousel() {
                             </div>
                         </div>
 
-            <FaAngleRight size={32} className='text-[#8dc9c8] absolute right-2 top-64 sm:top-56 md:top-96 cursor-pointer opacity-50' onClick={handleRight} />
+            <FaAngleRight size={32} className='text-[#8dc9c8] absolute right-2 top-64 sm:top-56 md:top-96 cursor-pointer opacity-75' onClick={handleRight} />
         </div>
     )
 }

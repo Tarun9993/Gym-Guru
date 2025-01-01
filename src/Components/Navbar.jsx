@@ -4,9 +4,9 @@ import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { Link as ScrollLink } from "react-scroll";
 function Navbar() {
 
-  const[menu,setMenu] = useState()
   const handleMenu = () => {
     console.log("menu");
     tl.play() 
@@ -22,21 +22,21 @@ function Navbar() {
 
   useGSAP(() =>{
     tl.from(backRef.current,{
-      x:-50,
+      x:-30,
       opacity:0,
-      duration:0.2,
+      duration:0.4,
     }),
     tl.from(items.current.children, {
       x:50,
       opacity:0,
-      duration:0.7,
-      delay:0.4,
+      duration:0.5,
+      delay:0.2,
       stagger: 0.2,
     }),
     tl.from(buttonRef.current,{
       x:80,
       opacity:0,
-      duration:0.6,
+      duration:0.4,
     })
   })
   tl.pause()
@@ -47,8 +47,10 @@ function Navbar() {
        <img src={logo} alt="logo" className='h-[5rem] cursor-pointer z-50'/>
     </div>
     <ul className='hidden md:flex gap-10 font-sans text-[1.20rem] font-medium text-gray-300'>
-  <li className="relative group cursor-pointer z-50">Home</li>
-  <li className="relative group cursor-pointer z-50">About</li>
+            <li className="relative group cursor-pointer z-50">Home</li>
+            <ScrollLink to="about" smooth={true} duration={900} offset={-70}>
+            <li className="relative group cursor-pointer z-50">About</li>
+          </ScrollLink>
   <li className="relative group cursor-pointer">Services</li>
   <li className="relative group cursor-pointer">Plans</li>
   <li className="relative group cursor-pointer">Contact</li>
@@ -65,8 +67,8 @@ function Navbar() {
     </nav>
    <div>
    <nav ref={backRef} className='absolute top-0 left-0 bg-black w-1/2 h-full z-30'>
-      <ul ref={items}  className='flex flex-col gap-10 ml-7 mt-20 mb-7 font-sans md:text-[1.75rem] font-medium text-gray-300'>
-        <li>Home</li>
+      <ul ref={items}  className='flex flex-col gap-10 ml-12 mt-20 mb-7 font-sans md:text-[1.75rem] font-medium text-gray-300 '>
+      <li>Home</li>
       <li>About</li>
       <li>Services</li>
       <li>Plans</li>
@@ -75,7 +77,7 @@ function Navbar() {
     
     <button ref={buttonRef} className="inline-flex relative  h-12 overflow-hidden rounded-full p-[1px] ml-7">
         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#16FCFA_0%,#16FCFA_50%,#16FCFA_100%)]" />
-        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 p-2 text-sm font-medium text-white backdrop-blur-3xl hover:bg-[#0e3a38]">
          Become A Member
         </span>
       </button>
