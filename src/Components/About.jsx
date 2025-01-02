@@ -26,7 +26,7 @@ function About() {
 //   });
 // }, []);
   return (
-    <div className='lg:grid grid-cols-3 gap-10 p-16 md:py-32 md:px-36'>
+    <div className='lg:grid grid-cols-3 gap-10 p-16 md:pt-32 md:px-36'>
       <div >
         <img className='pb-20 rounded-lg w-full h-96 shadow-lg md:w-[30rem] md:h-96 ' src="https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
       </div>

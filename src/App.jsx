@@ -5,7 +5,11 @@ import Information from './Components/Information';
 import About from './Components/About';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import BmiCal from './Components/BmiCal';
+import Services from './Components/Services';
+import Trainers from './Components/Trainers';
+import Pricing from './Components/Pricing';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,23 +19,23 @@ function App() {
 
 
   useEffect(() => {
-    gsap.fromTo(informationRef.current,
-      {
-        x: -80,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1.5,
-        delay: 0.6,
-        scrollTrigger: {
-          trigger: informationRef.current,
-          start: 'top 90%',
-          end: "bottom 80%",
-          scrub: true, 
-        }
-      });
+    // gsap.fromTo(informationRef.current,
+    //   {
+    //     x: -80,
+    //     opacity: 0,
+    //   },
+    //   {
+    //     x: 0,
+    //     opacity: 1,
+    //     duration: 4,
+    //     delay: 1,
+    //     scrollTrigger: {
+    //       trigger: informationRef.current,
+    //       start: 'top 90%',
+    //       end: "bottom 80%",
+    //       scrub: true, 
+    //     }
+    //   });
 
     
     gsap.fromTo(aboutRef.current,
@@ -42,8 +46,8 @@ function App() {
       {
         x: 0,
         opacity: 1,
-        duration: 1.5,
-        delay: 0.6,
+        duration: 4,
+        delay: 1,
         scrollTrigger: {
           trigger: aboutRef.current,
           start: 'top 90%',
@@ -66,7 +70,14 @@ function App() {
             <section id="about">
             <div ref={aboutRef}><About /></div>
             </section>
-       
+       <BmiCal /> 
+       <section id='service'>
+       <Services />
+       </section>
+       <Trainers />
+       <section id='plans' className="my-20">
+       </section>
+       <Pricing />
     </div>
   );
 }
