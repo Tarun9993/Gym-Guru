@@ -9,14 +9,10 @@ import { motion } from "motion/react";
 import { navText } from "../animatation";
 function Navbar({ menuOpen, setMenuOpen }) {
   const handleMenu = () => {
-    console.log("menu");
     tl.play();
-    setMenuOpen(true);
   };
   const handleCross = () => {
     tl.reverse();
-  
-   
   };
   const backRef = useRef();
   const items = useRef();
@@ -24,7 +20,6 @@ function Navbar({ menuOpen, setMenuOpen }) {
   var tl = gsap.timeline();
 
   useGSAP(() => {
-    tl = gsap.timeline({ paused: true });
     tl.from(backRef.current, {
       x: -30,
       opacity: 0,
@@ -43,6 +38,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
         duration: 0.4,
       });
   });
+  tl.pause();
   return (
     <div>
       <nav className="text-white flex justify-between px-5 py-1 items-center overflow-auto ">
@@ -50,7 +46,6 @@ function Navbar({ menuOpen, setMenuOpen }) {
           <img src={logo} alt="logo" className="h-[5rem] cursor-pointer z-50" />
         </div>
         <ul
-          
           className="hidden md:flex gap-10 font-sans text-[1.20rem] font-medium text-gray-300"
         >
           <motion.li
@@ -162,7 +157,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
           </button>
           <RxCross2
             size={28}
-            className="absolute top-5 right-0 m-8 text-white cursor-pointer z-50"
+            className="absolute top-0 right-0 m-10 text-white cursor-pointer"
             onClick={handleCross}
           />
         </nav>
