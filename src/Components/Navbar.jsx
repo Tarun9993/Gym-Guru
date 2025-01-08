@@ -134,7 +134,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
         >
           <ul
             ref={items}
-            className="flex flex-col gap-10 ml-12 mt-20 mb-7 font-sans md:text-[1.75rem] font-medium text-gray-300 "
+            className="flex flex-col gap-10 ml-12 mt-20 mb-7 pt-6 font-sans md:text-[1.75rem] font-medium text-gray-300 "
           >
             <li>Home</li>
             <ScrollLink to="about" smooth={true} duration={900} offset={-70}>
@@ -162,7 +162,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
           </button>
           <RxCross2
             size={28}
-            className="absolute top-1 right-2 m-12 text-white cursor-pointer"
+            className="absolute top-5 right-0 m-12 text-white cursor-pointer"
             onClick={handleCross}
           />
         </nav>
