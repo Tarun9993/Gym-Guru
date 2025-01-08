@@ -13,10 +13,15 @@ function About() {
         className='pb-20 rounded-lg w-full h-96 shadow-lg md:w-[30rem] md:h-96 ' src="https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
       </div>
       <div className='text-white col-span-2'>
-        <h1 className='text-3xl font-sans font-bold uppercase'>About  
-        <span className='text-[#16FCFA]'> gym guru</span></h1>
-        <motion.p
+        <motion.h1
         variants={about(0.2)}
+        initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+        className='text-3xl font-sans font-bold uppercase'>About  
+        <span className='text-[#16FCFA]'> gym guru</span></motion.h1>
+        <motion.p
+        variants={about(0.4)}
         initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -24,7 +29,7 @@ function About() {
         className='pt-5 text-lg text-neutral-500 leading-9 w-full text-justify md:w-full pb-4'>Gym Guru is your ultimate destination for discovering and reviewing the <span className='text-[#16FCFA] font-medium'>best fitness centers</span> across the country. Our platform is designed to empower fitness enthusiasts by connecting them with gyms that excel in that <span className='text-[#16FCFA] font-medium'>service quality, customer satisfaction,</span> and commitment to wellness. Whether you’re a seasoned athlete or just beginning your fitness journey, Gym Guru provides the insights you need to find the perfect gym tailored to your goals.
        </motion.p>
        <motion.button 
-        variants={about(0.5)}
+        variants={about(0.6)}
         initial="hidden"
         animate="visible"
        className=" md:inline-flex relative  h-12 overflow-hidden rounded-full p-[1px] ">

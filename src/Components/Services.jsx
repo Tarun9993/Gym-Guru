@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Service } from "../Data";
 import { LuMoveRight } from "react-icons/lu";
 import { motion } from "motion/react";
 
 
+
+
 function Services() {
-
-
   return (
     <div className="my-6">
       <div className="flex justify-center">
@@ -39,7 +39,7 @@ function Services() {
               >
                     <h1 className="absolute top-56 text-2xl font-semibold text-white">{item.title}</h1>
                     <p className="absolute top-64 text-sm tracking-tight pt-2 text-neutral-400">{item.desc}</p>
-                    <button className=" absolute bottom-3 left-16 md:left-32 lg:left-16 sm:left-24  px-4 py-2 bg-slate-950 rounded-lg text-neutral-200 flex gap-2 ">Read More <LuMoveRight size={20} className="text-white mt-1"/>
+                    <button  className=" absolute bottom-3 left-16 md:left-32 lg:left-16 sm:left-24  px-4 py-2 bg-slate-950 rounded-lg text-neutral-200 flex gap-2 ">Read More <LuMoveRight size={20} className="text-white mt-1"/>
                     </button>
                 </div>
                 </div>
