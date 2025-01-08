@@ -1,26 +1,11 @@
 import React, { useRef } from "react";
 import { Service } from "../Data";
 import { LuMoveRight } from "react-icons/lu";
-import { gsap } from "gsap";
+import { motion } from "motion/react";
+
 
 function Services() {
-  const cardRefs = useRef([]);
 
-  const handleMouseEnter = (index) => {
-    gsap.to(cardRefs.current[index], {
-      scale: 1.1,          
-      duration: 1,         
-      ease: "back.out(1.7)",   
-    });
-  };
-
-  const handleMouseLeave = (index) => {
-    gsap.to(cardRefs.current[index], {
-      scale: 1,              
-      duration: 1,        
-      ease: "power2.out",    
-    });
-  }
 
   return (
     <div className="my-6">
@@ -29,16 +14,23 @@ function Services() {
           Our Services
         </h1>
       </div>
-      <div className="p-3 gap-5 grid lg:grid-cols-4 md:grid-cols-2 ">
-        {Service.map((item,index) => {
+      <div className="mx-6 p-1 gap-5 grid lg:grid-cols-4 md:grid-cols-2 ">
+        {Service.map((item) => {
           return (
-            <div key={item.id} className="mx-10 my-5 ">
+            <motion.div
+            whileHover={{
+              rotateY: 10, 
+              rotateX: -5, 
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 120,
+              damping: 8, 
+            }}
+            key={item.id} className="mx-10 my-5 ">
                 <div className="">
                 <div
-                ref={(el) => (cardRefs.current[index] = el)} // Assign a ref to each card
-                onMouseEnter={() => handleMouseEnter(index)} // Pass the card's index
-                onMouseLeave={() => handleMouseLeave(index)} // Pass the card's index
-                className={`cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl max-w-sm mx-auto p-4`}
+                className={`cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl max-w-sm mx-auto p-1`}
                 style={{
                   backgroundImage: `linear-gradient(to top, black, transparent), url(${item.img})`,
                   backgroundSize: "cover",
@@ -51,7 +43,7 @@ function Services() {
                     </button>
                 </div>
                 </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

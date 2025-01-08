@@ -1,11 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import { trainers } from "../Data"
 import { LuMoveRight } from "react-icons/lu";
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-
-gsap.registerPlugin(ScrollTrigger);
+import { motion } from "motion/react";
+import { cardLeft } from "../animatation";
 function Trainers() {
 
   return (
@@ -18,7 +15,12 @@ function Trainers() {
         <div  className='grid gap-5  lg:grid-cols-4 md:grid-cols-2 m-10'>
             {trainers.map((item) =>{
                 return(
-                <div key={item.id} >
+                <motion.div
+              variants={cardLeft(item.delay)}
+              initial="hidden"
+             whileInView={"visible"}
+             viewport={{ once: true }}
+                key={item.id} >
                     <div className='cursor-pointer overflow-hidden relative card h-80 w-72 rounded-lg shadow-xl max-w-sm mx-auto  p-4'>
                     <img src={item.img} alt="" />
                     </div>
@@ -26,7 +28,7 @@ function Trainers() {
                     <h1 className='text-white text-xl font-sans font-semibold'>{item.name}</h1>
                     <p className='text-neutral-400 text-md '>{item.specialty}</p>
                     </div>
-                </div>
+                </motion.div>
                 )
             })}
         </div>

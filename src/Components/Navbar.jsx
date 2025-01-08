@@ -5,10 +5,13 @@ import { RxCross2 } from "react-icons/rx";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Link as ScrollLink } from "react-scroll";
-function Navbar() {
+import { motion } from "motion/react";
+import { navText } from "../animatation";
+function Navbar({ menuOpen, setMenuOpen }) {
   const handleMenu = () => {
     console.log("menu");
     tl.play();
+    setMenuOpen(true);
   };
   const handleCross = () => {
     console.log("cross");
@@ -45,18 +48,69 @@ function Navbar() {
         <div>
           <img src={logo} alt="logo" className="h-[5rem] cursor-pointer z-50" />
         </div>
-        <ul className="hidden md:flex gap-10 font-sans text-[1.20rem] font-medium text-gray-300">
-          <li className="relative group cursor-pointer z-50">Home</li>
+        <ul
+          
+          className="hidden md:flex gap-10 font-sans text-[1.20rem] font-medium text-gray-300"
+        >
+          <motion.li
+          variants={navText(0.2)}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            type: "spring",
+            stiffness: 30,
+            delay: 0.2,
+            duration: 1,
+          }}
+          className="relative group cursor-pointer z-50">Home</motion.li>
           <ScrollLink to="about" smooth={true} duration={900} offset={-70}>
-            <li className="relative group cursor-pointer z-50">About</li>
+            <motion.li
+             variants={navText(0.3)}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            type: "spring",
+            stiffness: 30,
+            delay: 0.2,
+            duration: 1,
+          }} className="relative group cursor-pointer z-50">About</motion.li>
           </ScrollLink>
           <ScrollLink to="service" smooth={true} duration={900} offset={-70}>
-            <li className="relative group cursor-pointer z-50">Services</li>
+            <motion.li
+             variants={navText(0.4)}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            type: "spring",
+            stiffness: 30,
+            delay: 0.2,
+            duration: 1,
+          }} className="relative group cursor-pointer z-50">Services</motion.li>
           </ScrollLink>
           <ScrollLink to="plans" smooth={true} duration={900} offset={-70}>
-            <li className="relative group cursor-pointer">Plans</li>
+            <motion.li
+             variants={navText(0.5)}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            type: "spring",
+            stiffness: 30,
+            delay: 0.2,
+            duration: 1,
+          }} className="relative group cursor-pointer">Plans</motion.li>
           </ScrollLink>
-          <li className="relative group cursor-pointer">Contact</li>
+          <ScrollLink to="contact" smooth={true} duration={900} offset={-70}>
+            <motion.li
+             variants={navText(0.6)}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            type: "spring",
+            stiffness: 30,
+            delay: 0.2,
+            duration: 1,
+          }} className="relative group cursor-pointer">Contact</motion.li>
+          </ScrollLink>
         </ul>
         <div>
           <button className="hidden md:inline-flex relative  h-12 overflow-hidden rounded-full p-[1px]">
@@ -66,12 +120,16 @@ function Navbar() {
             </span>
           </button>
         </div>
-        <IoMenu size={36} className="md:hidden h-10 w-9" onClick={handleMenu} />
+        <IoMenu
+          size={36}
+          className="md:hidden h-10 w-9 cursor-pointer"
+          onClick={handleMenu}
+        />
       </nav>
       <div>
         <nav
           ref={backRef}
-          className="absolute top-0 left-0 bg-black w-1/2 h-full z-30"
+          className="absolute top-0 left-0 bg-black w-1/2 h-full z-40"
         >
           <ul
             ref={items}
@@ -80,14 +138,16 @@ function Navbar() {
             <li>Home</li>
             <ScrollLink to="about" smooth={true} duration={900} offset={-70}>
               <li>About</li>
-              </ScrollLink>
-              <ScrollLink to="service" smooth={true} duration={900} offset={-70}>
-            <li>Services</li>
+            </ScrollLink>
+            <ScrollLink to="service" smooth={true} duration={900} offset={-70}>
+              <li>Services</li>
             </ScrollLink>
             <ScrollLink to="planes" smooth={true} duration={900} offset={-70}>
-            <li>Plans</li>
+              <li>Plans</li>
             </ScrollLink>
-            <li>Contact</li>
+            <ScrollLink to="contact" smooth={true} duration={900} offset={-70}>
+              <li>Contact</li>
+            </ScrollLink>
           </ul>
 
           <button
@@ -101,7 +161,7 @@ function Navbar() {
           </button>
           <RxCross2
             size={28}
-            className="absolute top-0 right-0 m-10 text-white cursor-pointer"
+            className="absolute top-1 right-4 m-10 text-white cursor-pointer"
             onClick={handleCross}
           />
         </nav>

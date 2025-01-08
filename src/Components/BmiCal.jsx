@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { toast, ToastContainer } from "react-toastify";
 function BmiCal() {
 
     const[age,setAge] = useState("")
@@ -27,18 +27,22 @@ function BmiCal() {
         if(bmi < 18.5){
           setMsg("Underweight - You might need to gain some weight.");
           setColor("text-yellow-500");
+          toast.warning("⚠️ You are underweight! Consider gaining some weight.");
         }  
         else if(bmi >= 18.5 && bmi < 24.9){
           setMsg("Normal Weight - Great job! Keep maintaining your weight.");
           setColor("text-green-500");
+          toast.success("🎉 Congratulations! You have a normal BMI!");
         }
         else if(bmi >= 24.9 && bmi < 29.9){
           setMsg("Overweight - Consider regular exercise and a balanced diet.");
           setColor("text-yellow-500");
+          toast.warning("⚠️ You are overweight! Time to focus on your fitness.");
         }
         else{
           setMsg("Obese - Consult a healthcare provider for advice.");
           setColor("text-red-500");
+          toast.error("🚨 Obesity Alert! Please consult a healthcare provider.");
         }
        setSuccess(true);
     }
@@ -46,22 +50,9 @@ function BmiCal() {
     
     
   return (
-    // <div>
-    // <div className='text-neutral-300 text-center'>
-    //       <h1 className='text-4xl md:text-4xl lg:text-5xl font-semibold max-w-4xl mx-auto text-center mt-6 relative z-20 py-6 tracking-widest'>BMI Calculator </h1>
-    // </div>
-    // <div className='md:grid md:grid-cols-2 md:gap-16 md:mx-80  lg:grid lg:grid-cols-2 lg:gap-16 lg:mx-80 mx-16 mb-5'>
-    //     <div className='border flex flex-col md:px-32 md:py-12 lg:px-32 lg:py-12 justify-center items-center'>
-    //     <input className='block px-5 md:px-12 md:py-3 py-2 mb-7 mt-7 rounded border-none focus:outline-none bg-neutral-200 text-gray-950 shadow-3xl' type="number" id="age" placeholder="Enter your age" />
-    //    <input className='block px-5 py-2 md:px-12 md:py-3 mb-7 rounded border-none focus:outline-none bg-neutral-200 text-gray-950 shadow-3xl' type="number" id="weight" placeholder="Enter your weight" />
-    //    <input className='block px-5  md:px-12 md:py-3 py-2 mb-7 rounded border-none focus:outline-none bg-neutral-200 text-gray-950 shadow-3xl' type="number" id="height" placeholder="Enter your height" />
-    //     </div>
-    //     <div> 
-    //      <p className='text-white'>A BMI Calculator is a tool used to compute the Body Mass Index (BMI), which is a numerical value derived from a person’s weight and height. It is widely used to determine whether an individual has a healthy body weight for their height.</p>
-    //     </div>
-    // </div>
-    // </div>
-    <div className=''>
+
+    <div>
+       <ToastContainer />
     <div className="text-neutral-300 text-center">
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold max-w-4xl mx-auto text-center relative z-20 py-2 tracking-widest">
         BMI Calculator
@@ -109,7 +100,7 @@ function BmiCal() {
             </div>
           )}
         <p className='pt-5 mt-5 text-lg text-neutral-400  w-full text-justify md:w-full pb-4'>
-          A BMI Calculator is a tool used to compute the Body Mass Index (BMI), which is a numerical value derived from a person’s weight and height. It is widely used to determine whether an individual has a healthy body weight for their height.
+        A BMI Calculator is a tool used to compute the Body Mass Index (BMI), which is a numerical value derived from a person’s weight and height is also. It is widely used to determine the whether an individual has a healthy body weight for their height and assess potential health risks associated with it.
           </p>
           {success && (
             <div className="hidden md:block mt-6 text-center">

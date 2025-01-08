@@ -41,7 +41,7 @@ export const Service =[
     id: 1,
     title: "Personal Training",
     img: "https://images.pexels.com/photos/4853939/pexels-photo-4853939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: "Achieve your fitness goals with one-on-one coaching tailored to your specific needs and preferences."
+    desc: "Achieve your fitness goals with one-on-one coaching tailored to your specific needs."
   },
   {
     id: 2,
@@ -53,37 +53,37 @@ export const Service =[
     id: 3,
     title: "Strength Training",
     img: "https://images.pexels.com/photos/136404/pexels-photo-136404.jpeg",
-    desc: "Access top-notch equipment and expert guidance to build muscle and improve strength."
+    desc: "Top-notch equipment and expert guidance to build muscle and improve strength."
   },
   {
     id: 4,
     title: "Cardio Workouts",
     img: "https://images.pexels.com/photos/416717/pexels-photo-416717.jpeg",
-    desc: "Boost your stamina and heart health with our state-of-the-art cardio machines and programs."
+    desc: "Boost your stamina and heart health with our state-of-the-art cardio machines"
   },
   {
   id: 5,
   title: "Nutrition",
   img:"https://www.istudy.org.uk/wp-content/uploads/2017/08/KK1-ADVANCED-DIET-FITNESS-AND-NUTRITION-COURSE.jpg",
-  desc: "Our team of certified nutritionists will provide personalized guidance to help you achieve your fitness goals."
+  desc: "Our team  will provide personalized guidance to help you achieve your fitness goals."
 },
 {
   id: 6,
   title: "Virtual Fitness Classes",
   img: "https://images.pexels.com/photos/6582860/pexels-photo-6582860.jpeg",
-  desc: "Stay fit from the comfort of your home with our live and on-demand virtual workout sessions."
+  desc: "Stay fit from the comfort of your home with our live."
 },
 {
   id: 7,
   title: "Yoga and Mindfulness",
   img: "https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg",
-  desc: "Achieve mental clarity and physical balance with our expert-led yoga and mindfulness sessions."
+  desc: "Achieve mental clarity and physical balance with our experts yoga and mindfulness sessions."
 },
 {
   id: 8,
   title: "Zumba Dance Fitness",
   img: "https://images.pexels.com/photos/4324026/pexels-photo-4324026.jpeg",
-  desc: "Join our high-energy Zumba sessions and groove to the beats while burning calories and having fun!"
+  desc: "Join our high-energy Zumba sessions and groove while burning calories and having fun!"
 }];
 export const trainers = [
   {
@@ -157,5 +157,35 @@ export const pricingOptions = [
       "Open gym access",
       "Access to spa and pool",
     ],
+  },
+];
+export const TestimonialsData = [
+  {
+    id: 1,
+    name: "John Doe",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    img: "https://picsum.photos/101/101",
+    delay: 0.2,
+  },
+  {
+    id: 2,
+    name: "Steve Smith",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    img: "https://picsum.photos/102/102",
+    delay: 0.5,
+  },
+  {
+    id: 3,
+    name: "Kristen",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    img: "https://picsum.photos/104/104",
+    delay: 0.8,
+  },
+  {
+    id: 5,
+    name: "Ariana",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    img: "https://picsum.photos/103/103",
+    delay: 1.1,
   },
 ];

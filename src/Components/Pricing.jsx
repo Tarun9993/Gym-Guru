@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { IoIosCheckboxOutline } from "react-icons/io";
-import { gsap } from "gsap";
+import { motion } from "motion/react";
+import { price } from "../animatation";
 function Pricing() {
 
   return (
@@ -8,7 +9,13 @@ function Pricing() {
          <h2 className='text-3xl text-white sm:text-5xl lg:text-6xl text-center my-16 tracking-wide'>
             Plans
         </h2>
-    <div className="flex flex-wrap gap-10 justify-center mt-10 mx-5"> 
+    <motion.div
+    variants={price(0.5)}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{once : true}}
+    
+    className="flex flex-wrap gap-10 justify-center mt-10 mx-5"> 
       <div  className="border h-[35rem] w-96 border-[#16FCF9] rounded-lg ">
         <h1 className="text-neutral-300 text-center text-4xl font-sans tracking-wider pt-5 font-bold">
           Baic Plane
@@ -119,7 +126,7 @@ function Pricing() {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
     </div>
   );
 }
