@@ -58,7 +58,7 @@ function BmiCal() {
         BMI Calculator
       </h1>
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 px-6 md:px-10 lg:px-36 mx-24">
+    {/* <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 px-6 md:px-10 lg:px-36 mx-24">
       <form onSubmit={handleSubmit}>
       <div className="rounded-xl shadow-2xl flex flex-col px-6 py-6 sm:px-12 sm:py-12 md:px-16 md:py-16 justify-center items-center">
         <input
@@ -86,7 +86,7 @@ function BmiCal() {
           onChange={(e) => setHeight(e.target.value)}
         />
         <button
-          className="block w-full sm:w-10/12 px-5 md:px-8 py-2 mb-6 text-white bg-slate-950 rounded-xl border border-[#16FCFA] hover:bg-slate-900 focus:outline-none shadow-xl text-xl tracking-widest"
+          className="block w-full sm:w-10/12 md:px-8 py-2 mb-6 text-white bg-slate-950 rounded-xl border border-[#16FCFA] hover:bg-slate-900 focus:outline-none shadow-xl md:text-xl md:tracking-widest"
           type="submit">Calculate BMI</button>
           
       </div>
@@ -110,7 +110,62 @@ function BmiCal() {
           )}
        
       </div>
+    </div> */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 px-6 md:px-10 lg:px-36 mx-auto">
+  <form onSubmit={handleSubmit} className="w-full">
+    <div className="rounded-xl shadow-2xl flex flex-col px-6 py-6 sm:px-12 sm:py-12 md:px-16 md:py-16 justify-center items-center ">
+      <input
+        className="block w-full sm:w-10/12 px-5 md:px-8 py-3 mb-6 rounded-lg border-none focus:outline-none bg-neutral-200 text-gray-950 shadow-lg"
+        type="number"
+        id="age"
+        placeholder="Enter your age"
+        value={age}
+        onChange={(e) => setAge(e.target.value)}
+      />
+      <input
+        className="block w-full sm:w-10/12 px-5 md:px-8 py-3 mb-6 rounded-lg border-none focus:outline-none bg-neutral-200 text-gray-950 shadow-lg"
+        type="number"
+        id="weight"
+        placeholder="Enter your weight"
+        value={weight}
+        onChange={(e) => setWeight(e.target.value)}
+      />
+      <input
+        className="block w-full sm:w-10/12 px-5 md:px-8 py-3 mb-6 rounded-lg border-none focus:outline-none bg-neutral-200 text-gray-950 shadow-lg"
+        type="number"
+        id="height"
+        placeholder="Enter your height"
+        value={height}
+        onChange={(e) => setHeight(e.target.value)}
+      />
+      <button
+        className="block w-full sm:w-10/12 px-5 md:px-8 py-3 mb-6 text-white bg-slate-950 rounded-lg border border-[#16FCFA] hover:bg-slate-900 focus:outline-none shadow-lg md:text-xl tracking-wide"
+        type="submit"
+      >
+        Calculate BMI
+      </button>
     </div>
+  </form>
+
+  <div className="w-full">
+    {success && (
+      <div className="mt-4 text-center md:hidden">
+        <p className="text-xl font-semibold text-neutral-300">Your BMI: {bmi}</p>
+        <p className={`text-xl font-bold ${color}`}>{msg}</p>
+      </div>
+    )}
+    <p className="pt-5 mt-5 text-lg text-neutral-400 text-justify">
+      A BMI Calculator is a tool used to compute the Body Mass Index (BMI), which is a numerical value derived from a person’s weight and height. It is widely used to determine whether an individual has a healthy body weight for their height and assess potential health risks associated with it.
+    </p>
+    {success && (
+      <div className="hidden md:block mt-8 text-center">
+        <p className="text-xl font-semibold text-neutral-300">Your BMI: {bmi}</p>
+        <p className={`text-xl font-bold ${color}`}>{msg}</p>
+      </div>
+    )}
+  </div>
+</div>
+
   </div>
   
 )

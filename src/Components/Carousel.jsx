@@ -20,7 +20,7 @@ function Carousel({ menuOpen }) {
     <div>
       <FaAngleLeft
         size={32}
-         className={`text-[#8dc9c8] absolute top-64 sm:top-56 md:top-96 left-2 cursor-pointer ${menuOpen ? "z-10" : "z-40"} opacity-50`}
+         className={`text-[#8dc9c8] absolute top-64 sm:top-56 md:top-96 left-2 cursor-pointer ${menuOpen ? "z-10" : "z-50"} opacity-50`}
 
         onClick={handleLeft}
       />

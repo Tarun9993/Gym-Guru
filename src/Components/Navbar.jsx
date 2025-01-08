@@ -14,8 +14,9 @@ function Navbar({ menuOpen, setMenuOpen }) {
     setMenuOpen(true);
   };
   const handleCross = () => {
-    console.log("cross");
     tl.reverse();
+  
+   
   };
   const backRef = useRef();
   const items = useRef();
@@ -23,6 +24,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
   var tl = gsap.timeline();
 
   useGSAP(() => {
+    tl = gsap.timeline({ paused: true });
     tl.from(backRef.current, {
       x: -30,
       opacity: 0,
@@ -41,7 +43,6 @@ function Navbar({ menuOpen, setMenuOpen }) {
         duration: 0.4,
       });
   });
-  tl.pause();
   return (
     <div>
       <nav className="text-white flex justify-between px-5 py-1 items-center overflow-auto ">
