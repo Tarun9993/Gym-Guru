@@ -3,16 +3,19 @@ import { TestimonialsData } from "../Data";
 import Slider from "react-slick";
 function Testimonial() {
   const setting = {
-    dots: false,
+    dots: true,
     arrow: false,
     infinite: true,
     speed: 900,
     slidesToScroll: 1,
-    // autoplay: true,
     autoplaySpeed: 2000,
     cssEase: "linear",
     pauseOnHover: true,
     pauseOnFocus: true,
+    customPaging: (i) => (
+      <div
+        className="custom-dot"></div>
+    ),
     responsive: [
       {
         breakpoint: 10000,
@@ -40,7 +43,7 @@ function Testimonial() {
     ],
   };
   return (
-    <div className="py-10 px-24 my-10 ">
+    <div className="py-10 px-9 md:px-24 my-10 ">
       <div className="container">
         {/* header section */}
         <div className="space-y-4 p-6 text-center max-w-[600px] mx-auto mb-6">
@@ -56,7 +59,7 @@ function Testimonial() {
                 <div key={item.id}>
                   <div className="flex flex-col gap-4 p-8 shadow-lg bg-[#3333] mx-4 rounded-xl bg-secondary/10">
                     {/* upper section */}
-                    <div className="flex justify-start items-center gap-5">
+                    <div className="md:flex justify-start items-center gap-5">
                       <img
                         src={item.img}
                         alt=""

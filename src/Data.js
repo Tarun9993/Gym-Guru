@@ -69,7 +69,7 @@ export const Service =[
 },
 {
   id: 6,
-  title: "Virtual Fitness Classes",
+  title: "Virtual Classes",
   img: "https://images.pexels.com/photos/6582860/pexels-photo-6582860.jpeg",
   desc: "Stay fit from the comfort of your home with our live."
 },

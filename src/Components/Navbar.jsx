@@ -139,7 +139,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
               <li>Services</li>
             </ScrollLink>
             <ScrollLink to="planes" smooth={true} duration={900} offset={-70}>
-              <li>Plans</li>
+              <li className="z-50">Plans</li>
             </ScrollLink>
             <ScrollLink to="contact" smooth={true} duration={900} offset={-70}>
               <li>Contact</li>
@@ -151,7 +151,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
             className="inline-flex relative  h-12 overflow-hidden rounded-full p-[1px] ml-7"
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#16FCFA_0%,#16FCFA_50%,#16FCFA_100%)]" />
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 p-2 text-sm font-medium text-white backdrop-blur-3xl hover:bg-[#0e3a38]">
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 p-1 text-sm tracking-tighter font-medium text-white backdrop-blur-3xl hover:bg-[#0e3a38]">
               Become A Member
             </span>
           </button>
