@@ -161,7 +161,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
           </button>
           <RxCross2
             size={28}
-            className="absolute top-1 right-4 m-10 text-white cursor-pointer"
+            className="absolute top-1 right-2 m-12 text-white cursor-pointer"
             onClick={handleCross}
           />
         </nav>

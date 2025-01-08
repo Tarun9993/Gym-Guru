@@ -56,7 +56,7 @@ function Footer() {
                  initial={{opacity:0, scale:0.5}}
                  whileInView={{opacity:1,scale:1}}
                  viewport={{ once: true }}
-                 transition={{type:"spring", stiffness:30,delay:0.2,duration:1}}
+                 transition={{type:"spring", stiffness:30,delay:1.5,duration:2.5}}
                 className='h-36'
                 src={logo} alt="logo" />
             </div>
